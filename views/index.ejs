@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <header>
-      <h1>PIKOLI</h1>
-    </header>
+<%- include('layouts/header'); -%>
+    <%- include('layouts/nav'); -%>
+    <section>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
-</html>
+    </section>
+<%- include('layouts/footer'); -%>
