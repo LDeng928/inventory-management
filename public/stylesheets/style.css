@@ -3,6 +3,8 @@ body {
   padding:0;
   margin:0;
   background-color: #f4f4f4;
+  height: 100vh;
+  position: relative;
 }
 /* Global */
 
@@ -16,23 +18,43 @@ header {
   background: #35424a;
   color: #ffffff;
   padding-top: 30px;
-  min-height: 70px;
+  height: 10%;
   border-bottom: #e8491d 3px solid;
+  margin: 0;
+}
+
+header h1 {
+  margin-left: 5%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+header h3 {
+  margin-left: 10%;
+  margin-top: 0;
 }
 
 /* sidebar */
-aside#sidebar {
-  float: right;
-  width: 30%;
-  margin-top: 10px;
+#nav {
+  background: #35424a;
+  color: #ffffff;
+  padding-left: 3%;
+  min-width: 7%;
+  border-right: #e8491d 3px solid;
+  float: left;
+  height: 79%;
+  margin: 0;
 }
 
 /* footer */
 
 footer {
   padding: 20px;
-  margin-top: 20px;
+  height: 3%;
+  margin: 0;
   color: #ffffff;
-  background-color: #e8491d;
+  background: #35424a;
+  border-top: #e8491d 3px solid;
   text-align: center;
+  clear: both;
 }
