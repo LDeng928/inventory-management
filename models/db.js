@@ -13,3 +13,4 @@ db.once('open', (err) => {console.log('db connected')});
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
 //Export module 
 module.exports = db;
+
