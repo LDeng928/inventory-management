@@ -60,7 +60,7 @@ exports.product_create_post = function(req, res){
     var productPrice = req.body.productPrice;
 
     var pageData = {
-        productId = productId,
+        productId: productId,
         productName: productName,
         productPrice: productPrice
     }
