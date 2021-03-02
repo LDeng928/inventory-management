@@ -51,6 +51,7 @@ header h3 {
 }
 
 /* sidebar */
+
 #nav {
   background: #35424a;
   color: #ffffff;
@@ -61,6 +62,14 @@ header h3 {
   height: 79%;
   margin: 0;
   padding: 0;
+}
+
+/* section */
+
+section{
+  margin-left: 230px;
+  margin-top: ;
+  
 }
 
 /* footer */
