@@ -2,7 +2,7 @@ body {
   font: 15px/1.5 arial, Helvetica, sans-serif;
   padding:0;
   margin:0;
-  background-color: #f4f4f4;
+  background-color:grey;
   height: 100vh;
   position: relative;
 }
@@ -69,6 +69,22 @@ header h3 {
 section{
   margin-left: 230px;
   margin-top: 30px ;
+}
+
+table{
+  background-color: white;
+  border-radius: 50px;
+  margin-top: 100px;
+  margin-left: 150px;
+}
+
+th {
+  padding: 30px;
+  text-align: center;
+}
+td {
+  padding: 30px;
+  text-align: center;
 }
 
 /* footer */
