@@ -24,3 +24,4 @@
 #### March 5 commit
 
 1. Full CRUD function on product.
+2. Success page to inform user the functions have been completed.
