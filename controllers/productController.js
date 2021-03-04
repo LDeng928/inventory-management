@@ -43,6 +43,7 @@ exports.product_create_get = function(req, res){
         productId: "",
         productName: "",
         productPrice: "",
+        productCost: "",
         category: "",
         storeName: "",
         warehouseQty: "",
@@ -62,6 +63,7 @@ exports.product_create_post = function(req, res){
     var productId = req.body.productId;
     var productName = req.body.productName;
     var productPrice = req.body.productPrice;
+    var productCost = req.body.productCost;
     var category = req.body.category;
     var storeName = req.body.storeName;
     var warehouseQty = req.body.warehouseQty;
@@ -71,6 +73,7 @@ exports.product_create_post = function(req, res){
         productId: productId,
         productName: productName,
         productPrice: productPrice,
+        productCost: productCost,
         category: category,
         storeName: storeName,
         warehouseQty: warehouseQty,
