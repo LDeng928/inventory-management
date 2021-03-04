@@ -88,7 +88,6 @@ exports.product_create_post = function(req, res){
 
     //Renders a success message
     res.render('success', {action: 'Created a new product'});
-<<<<<<< HEAD
 }
 
 //Delete product on GET
@@ -164,6 +163,3 @@ exports.product_update_post = function(req, res){
         res.render('success', {action: "Updated product"});
     })
 };
-=======
-}
->>>>>>> fa3227b6c219fd6245bc57903619d4acf9b8c6bc
