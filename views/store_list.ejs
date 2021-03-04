@@ -3,17 +3,21 @@
   <table>
     <thead>
       <tr>
+        <th>Store</th>
         <th>Address</th>
-        <th>Phone number</th>
+        <th>Hours</th>
         <th>Store manager</th>
+        <th>Phone number</th>
       </tr>
     </thead>
     <tbody>
       <% for(var store of stores) { %>
       <tr>
+        <td>Store Name</td>
         <td><%= store.address %></td>
-        <td><%= store.phoneNumber %></td>
+        <td>Store Hours</td>
         <td><%= store.storeManager %></td>
+        <td><%= store.phoneNumber %></td>
       </tr>
       <% } %>
     </tbody>
