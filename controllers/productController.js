@@ -36,20 +36,22 @@ exports.product_detail = function(req, res){
 //Display product create form on GET
 exports.product_create_get = function(req, res){
     //check if user is logged in
-    
+    if(req.session.userLoggedIn){
     //create a JS object to store data
-    var pageData = {
-        //Must match the collection from MongoDB, product_form ids and the Product model
-        productId: "",
-        productName: "",
-        productPrice: ""
-    }
-
+        var pageData = {
+            //Must match the collection from MongoDB, product_form ids and the Product model
+            productId: "",
+            productName: "",
+            productPrice: ""
+        };
+    
     //Render the product create form
     res.render('product_form', pageData);
-
+    }
     //Else redirect user back to log in page
-    
+    else {
+        res.redirect('/users');
+    }
 }
 
 //Handle product create on POST
@@ -73,4 +75,53 @@ exports.product_create_post = function(req, res){
 
     //Renders a success message
     res.render('success', {action: 'Created a new product'});
+}
+
+//Delete product on GET
+exports.product_delete_get = function(req, res){
+    if(req.session.userLoggedIn){
+        var id = req.params.id;
+
+        Product.findByIdAndDelete({_id: id}).exec(function(err, product){
+            if(product){
+                res.render('success', {action: "Product removed."});
+            }
+            else{
+                res.render('error', {message: "Product not found. Please try again."});
+            }
+        });               
+    }
+     //Else redirect back to log in page
+    else{
+            res.redirect('/users');
+        }
+}
+
+//Display product update form on GET
+exports.product_update_get = function(req, res){
+    var id = req.params.id;
+
+    if(req.session.userLoggedIn){
+        Product.findOne({_id: id}).exec(function(err, product){
+            if(err)console.log(err);
+
+            var pageData = {
+                productId: product.productId,
+                productName: productName,
+                productPrice: product.productPrice
+            }
+            res.render('product_form', pageData);
+        });
+    }
+    else{
+        res.redirect('/users');
+    }
+}
+
+//Hanlde product update on POST
+exports.product_update_post = function(req, res){
+    var productId = req.body.productId;
+    var productName = req.body.productName;
+    var productPrice = req.body.productPrice;
+    if(err) console.log(err);
 }
