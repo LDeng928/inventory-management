@@ -15,3 +15,7 @@
 
 1. Added 2 new packages, fileupload and session. You will need to run npm install
 2. Session log in is fully functional. Added users collection on MongoDB.
+
+#### March 4 commit
+1. Changed product and store models to reflect attributes that are in the DB.
+2. Updated productController.js to reflect attributes that are in the DB for products.

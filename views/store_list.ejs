@@ -7,19 +7,21 @@
           <tr>
             <th>Store</th>
             <th>Address</th>
+            <th>City</th>
             <th>Hours</th>
-            <th>Store manager</th>
             <th>Phone number</th>
+            <th>Store manager</th>
           </tr>
         </thead>
         <tbody>
           <% for(var store of stores) { %>
           <tr>
-            <td>Store Name</td>
-            <td><%= store.address %></td>
-            <td>Store Hours</td>
-            <td><%= store.storeManager %></td>
+            <td><%= store.storeName %></td>
+            <td><%= store.streetAddress %></td>
+            <td><%= store.city %></td>
+            <td><%= store.openingHours %></td>
             <td><%= store.phoneNumber %></td>
+            <td><%= store.storeManager %></td>
           </tr>
           <% } %>
         </tbody>

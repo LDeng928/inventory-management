@@ -20,11 +20,11 @@
               <tr>
                 <td><%= product.productId %></td>
                 <td><%= product.productName %></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><%= product.category %></td>
+                <td><%= product.storeName %></td>
+                <td><%= product.warehouseQty %></td>
+                <td><%= product.storeQty %></td>
+                <td><%= product.productCost %></td>
                 <td>$<%= product.productPrice.toFixed(2) %></td>
               </tr>
               <% } %>
