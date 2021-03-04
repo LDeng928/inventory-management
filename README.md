@@ -10,3 +10,8 @@
 1. Product controllers: created four controllers. First is to list all products. Second is to see the details of a specific product. Third is the get function on create a new product. Fourth is the post function on create a new product.
 2. Added product_detail view
 3. Added product_form view
+
+#### March 3 commit
+
+1. Added 2 new packages, fileupload and session. You will need to run npm install
+2. Session log in is fully functional. Added users collection on MongoDB.
