@@ -1,56 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<%- include('layouts/head'); -%>  
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-    <link rel='stylesheet' href='/stylesheets/stylelogin.css' />
-    <title>Log in</title>
-  </head>
-  <body>
-    <header>
-      <a href="/"><h1>STORE NAME</h1>
-      <h3>Inventory Management by PIKOLI</h3></a>
-    </header>
-    <nav id="nav">
-    </nav>
-    <div class="container"> 
-      <div class="container col-4">
-        <section>
-          <form action="" name="logInForm" method="POST">
-            <label for="username">User Name:</label>
-            <input
-              type="text"
-              class="form-control"
-              name="username"
-              id="username"
-            /><br />
-            <label for="password">Password:</label>
-            <input
-              type="text"
-              class="form-control"
-              name="password"
-              id="password"
-            /><br /><br />
-            <p id="errors">
-              <% if(typeof error !== 'undefined'){ %> <%= error %> <% } %>
-            </p>
-            <input
-              class="btn btn-outline-primary"
-              type="submit"
-              value="Submit"
-            />
-          </form>
-        </section>
-      </div>
-    </div>
+      crossorigin="anonymous"/>
+  <%- include('layouts/header'); -%>   
+    <%- include('layouts/nav'); -%>
+      <section>
+        <form action="" name="logInForm" method="POST">
+          <label for="username">User Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            id="username"
+          /><br />
+          <label for="password">Password:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="password"
+            id="password"
+          /><br /><br />
+          <p id="errors">
+            <% if(typeof error !== 'undefined'){ %> <%= error %> <% } %>
+          </p>
+          <input
+            class="btn btn-outline-primary"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </section>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
