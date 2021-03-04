@@ -28,5 +28,5 @@ exports.log_in_post = function(req, res){
 exports.log_out_get = function(req, res){
     req.session.destroy();
     //redirect back to index page
-    res.redirect('http://localhost:3000/');
+    res.render('success', {action: 'Logged out'});
 }
