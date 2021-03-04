@@ -2,6 +2,33 @@
 <%- include('layouts/header'); -%>
     <%- include('layouts/nav'); -%>
     <section>
-
+        <table>
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Store Name</th>
+                <th>Warehouse Qty</th>
+                <th>Store Qty</th>
+                <th>Cost</th>
+                <th>Retail Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var product of products) { %>
+              <tr>
+                <td>Code</td>
+                <td>Name</td>
+                <td>Category</td>
+                <td>Store Name</td>
+                <td>Warehouse Qty</td>
+                <td>Store Qty</td>
+                <td>Cost</td>
+                <td>Retail Price</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
     </section>
 <%- include('layouts/footer'); -%>
