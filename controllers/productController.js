@@ -119,8 +119,12 @@ exports.product_update_get = function(req, res){
 
             var pageData = {
                 productId: product.productId,
-                productName: productName,
-                productPrice: product.productPrice
+                productName: product.productName,
+                productPrice: product.productPrice,
+                category: product.category,
+                storeName: product.storeName,
+                warehouseQty: product.warehouseQty,
+                storeQty: product.storeQty
             }
             res.render('product_form', pageData);
         });
@@ -135,5 +139,26 @@ exports.product_update_post = function(req, res){
     var productId = req.body.productId;
     var productName = req.body.productName;
     var productPrice = req.body.productPrice;
+    var category = req.body.category;
+    var storeName = req.body.storeName;
+    var warehouseQty = req.body.warehouseQty;
+    var storeQty = req.body.storeQty;
     if(err) console.log(err);
-}
+
+    var pageData = {
+                productId: productId,
+                productName: productName,
+                productPrice: productPrice,
+                category: category,
+                storeName: storeName,
+                warehouseQty: warehouseQty,
+                storeQty: storeQty
+    }
+
+    var query = {_id:req.params.id}
+
+    Product.updateOne(query, pageData, (err, doc)=>{
+        if(err)console.log(err);
+        res.render('success', {action: "Updated product"});
+    })
+};
