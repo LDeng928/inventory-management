@@ -95,6 +95,10 @@ table{
   margin-left: 150px;
 }
 
+tbody{
+  overflow: scroll;
+}
+
 th {
   padding: 30px;
   text-align: center;
