@@ -50,20 +50,16 @@ header h3 {
   margin-top: 0;
 }
 
-form{
-  color: black;
+header a{
   float: right;
-  margin-right: 50px;
   margin-top: 20px;
+  margin-right: 20px;
   border: black 2px solid;
   border-radius: 10px;
   box-shadow: grey -1px 2px 2px 1px;
   padding: 10px;
   text-align: center;
   background-color: darkgray;
-}
-#username, #password{
-  width: 100px;
 }
 
 /* sidebar */

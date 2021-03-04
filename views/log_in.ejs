@@ -11,13 +11,17 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Log in</title>
   </head>
   <body>
-    <div class="container">
-      <%- include('layouts/header'); -%>
-
+    <header>
+      <h1>STORE NAME</h1>
+      <h3>Inventory Management by PIKOLI</h3>
+    </header>
+    <nav id="nav">
+    </nav>
+    <div class="container"> 
       <div class="container col-4">
         <section>
           <form action="" name="logInForm" method="POST">
@@ -58,7 +62,5 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-  </body>
-
   <%- include('layouts/footer'); -%>
-</html>
+
