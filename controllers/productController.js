@@ -38,13 +38,17 @@ exports.product_create_get = function(req, res){
     //check if user is logged in
     if(req.session.userLoggedIn){
     //create a JS object to store data
-        var pageData = {
-            //Must match the collection from MongoDB, product_form ids and the Product model
-            productId: "",
-            productName: "",
-            productPrice: ""
-        };
-    
+    var pageData = {
+        //Must match the collection from MongoDB, product_form ids and the Product model
+        productId: "",
+        productName: "",
+        productPrice: "",
+        category: "",
+        storeName: "",
+        warehouseQty: "",
+        storeQty: ""
+    }
+
     //Render the product create form
     res.render('product_form', pageData);
     }
@@ -60,11 +64,19 @@ exports.product_create_post = function(req, res){
     var productId = req.body.productId;
     var productName = req.body.productName;
     var productPrice = req.body.productPrice;
+    var category = req.body.category;
+    var storeName = req.body.storeName;
+    var warehouseQty = req.body.warehouseQty;
+    var storeQty = req.body.storeQty;
 
     var pageData = {
         productId: productId,
         productName: productName,
-        productPrice: productPrice
+        productPrice: productPrice,
+        category: category,
+        storeName: storeName,
+        warehouseQty: warehouseQty,
+        storeQty: storeQty
     }
 
     //Pass data and create a new product model instance 

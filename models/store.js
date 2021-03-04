@@ -1,9 +1,12 @@
 //Require Mongoose
 var mongoose = require('mongoose');
 const Store = mongoose.model('Store', {
-    address: String,
+    streetAddress: String,
+    city: String,
     phoneNumber: String,
-    storeManager: String
+    storeManager: String,
+    storeName: String,
+    openingHours: String
 })
 
 //Export model
