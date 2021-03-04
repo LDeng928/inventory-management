@@ -1,34 +1,50 @@
-<%- include('layouts/head'); -%>  
-<%- include('layouts/header'); -%>
-    <%- include('layouts/nav'); -%>
-    <section>
-        <table>
-            <thead>
-              <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Store Name</th>
-                <th>Warehouse Qty</th>
-                <th>Store Qty</th>
-                <th>Cost</th>
-                <th>Retail Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for(var product of products) { %>
-              <tr>
-                <td><%= product.productId %></td>
-                <td><%= product.productName %></td>
-                <td><%= product.category %></td>
-                <td><%= product.storeName %></td>
-                <td><%= product.warehouseQty %></td>
-                <td><%= product.storeQty %></td>
-                <td>$<%= product.productCost.toFixed(2) %></td>
-                <td>$<%= product.productPrice.toFixed(2) %></td>
-              </tr>
-              <% } %>
-            </tbody>
-          </table>
-    </section>
+<%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
+include('layouts/nav'); -%>
+<section>
+  <button><a href="/product/create">Add a product</a></button>
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Store Name</th>
+        <th>Warehouse Qty</th>
+        <th>Store Qty</th>
+        <th>Cost</th>
+        <th>Retail Price</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var product of products) { %>
+      <tr>
+        <td><%= product.productId %></td>
+        <td><%= product.productName %></td>
+        <td><%= product.category %></td>
+        <td><%= product.storeName %></td>
+        <td><%= product.warehouseQty %></td>
+        <td><%= product.storeQty %></td>
+        <td>$<%= product.productCost.toFixed(2) %></td>
+        <td>$<%= product.productPrice.toFixed(2) %></td>
+        <td>
+          <input
+            type="button"
+            value="Edit"
+            onclick="location.href='/product/<%= product.id %>/update'"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="Delete"
+            onclick="location.href='/product/<%= product.id %>/delete'"
+          />
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</section>
 <%- include('layouts/footer'); -%>

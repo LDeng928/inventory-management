@@ -17,5 +17,10 @@
 2. Session log in is fully functional. Added users collection on MongoDB.
 
 #### March 4 commit
+
 1. Changed product and store models to reflect attributes that are in the DB.
 2. Updated productController.js to reflect attributes that are in the DB for products.
+
+#### March 5 commit
+
+1. Full CRUD function on product.

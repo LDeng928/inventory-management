@@ -81,7 +81,7 @@ exports.product_create_post = function(req, res){
     }
 
     //Pass data and create a new product model instance 
-    var newProduct = new Product(pageData)
+    var newProduct = new Product(pageData);
 
     //Save the new product to MongoDB
     newProduct.save().then(()=> console.log('New product created'));
@@ -114,7 +114,8 @@ exports.product_delete_get = function(req, res){
 exports.product_update_get = function(req, res){
     var id = req.params.id;
 
-    if(req.session.userLoggedIn){
+    if(req.session.userLoggedIn){        
+
         Product.findOne({_id: id}).exec(function(err, product){
             if(err)console.log(err);
 
@@ -122,6 +123,7 @@ exports.product_update_get = function(req, res){
                 productId: product.productId,
                 productName: product.productName,
                 productPrice: product.productPrice,
+                productCost: product.productCost,
                 category: product.category,
                 storeName: product.storeName,
                 warehouseQty: product.warehouseQty,
@@ -140,16 +142,18 @@ exports.product_update_post = function(req, res){
     var productId = req.body.productId;
     var productName = req.body.productName;
     var productPrice = req.body.productPrice;
+    var productCost = req.body.productCost;
     var category = req.body.category;
     var storeName = req.body.storeName;
     var warehouseQty = req.body.warehouseQty;
     var storeQty = req.body.storeQty;
-    if(err) console.log(err);
+    
 
     var pageData = {
                 productId: productId,
                 productName: productName,
                 productPrice: productPrice,
+                productCost: productCost,
                 category: category,
                 storeName: storeName,
                 warehouseQty: warehouseQty,
