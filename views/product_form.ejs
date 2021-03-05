@@ -1,80 +1,83 @@
-<%- include('layouts/head'); -%> <%- include('layouts/header'); %> <%-
-include('layouts/nav'); -%>
+<%- include('layouts/head'); -%> 
+<%- include('layouts/header'); %> 
+<%- include('layouts/nav'); -%>
 
 <!-- MUST Add Form to collect new product date -->
-<form name="product_form" method="POST" enctype="multipart/form-data">
-  <label for="productId">Product Id</label>
-  <input
-    type="number"
-    name="productId"
-    id="productId"
-    placeholder="Please enter product id."
-    value="<%= productId %>"
-  />
-  <br />
-  <label for="productName">Product name</label>
-  <input
-    type="text"
-    name="productName"
-    id="productName"
-    placeholder="Please enter the name of the product."
-    value="<%= productName %>"
-  />
-  <br />
-  <label for="productPrice">Product price</label>
-  <input
-    type="number"
-    name="productPrice"
-    id="productPrice"
-    placeholder="Please enter price here."
-    value="<%= productPrice %>"
-  />
-  <br />
-  <label for="productCost">Product cost</label>
-  <input
-    type="number"
-    name="productCost"
-    id="productCost"
-    placeholder="Please enter cost here."
-    value="<%= productCost %>"
-  />
-  <br />
-  <label for="category">Category</label>
-  <input
-    type="text"
-    name="category"
-    id="category"
-    placeholder="Please enter category here."
-    value="<%= category %>"
-  />
-  <br />
-  <label for="storeName">Store name</label>
-  <input
-    type="text"
-    name="storeName"
-    id="storeName"
-    placeholder="Please enter store name here."
-    value="<%= storeName %>"
-  />
-  <br />
-  <label for="warehouseQty">Warehouse quantity</label>
-  <input
-    type="number"
-    name="warehouseQty"
-    id="warehouseQty"
-    placeholder="Please enter warehouse quantity here."
-    value="<%= warehouseQty %>"
-  />
-  <br />
-  <label for="storeQty">Store quantity</label>
-  <input
-    type="number"
-    name="storeQty"
-    id="storeQty"
-    placeholder="Please enter store quantity here."
-    value="<%= storeQty %>"
-  />
-  <br />
-  <input type="submit" value="Submit" name="submit" />
-</form>
+<div id="editProduct">
+  <form name="product_form" method="POST" enctype="multipart/form-data">
+    <label for="productId">Product Id</label>
+    <input
+      type="number"
+      name="productId"
+      id="productId"
+      placeholder="Please enter product id."
+      value="<%= productId %>"
+    />
+    <br />
+    <label for="productName">Product name</label>
+    <input
+      type="text"
+      name="productName"
+      id="productName"
+      placeholder="Please enter the name of the product."
+      value="<%= productName %>"
+    />
+    <br />
+    <label for="productPrice">Product price</label>
+    <input
+      type="number"
+      name="productPrice"
+      id="productPrice"
+      placeholder="Please enter price here."
+      value="<%= productPrice %>"
+    />
+    <br />
+    <label for="productCost">Product cost</label>
+    <input
+      type="number"
+      name="productCost"
+      id="productCost"
+      placeholder="Please enter cost here."
+      value="<%= productCost %>"
+    />
+    <br />
+    <label for="category">Category</label>
+    <input
+      type="text"
+      name="category"
+      id="category"
+      placeholder="Please enter category here."
+      value="<%= category %>"
+    />
+    <br />
+    <label for="storeName">Store name</label>
+    <input
+      type="text"
+      name="storeName"
+      id="storeName"
+      placeholder="Please enter store name here."
+      value="<%= storeName %>"
+    />
+    <br />
+    <label for="warehouseQty">Warehouse quantity</label>
+    <input
+      type="number"
+      name="warehouseQty"
+      id="warehouseQty"
+      placeholder="Please enter warehouse quantity here."
+      value="<%= warehouseQty %>"
+    />
+    <br />
+    <label for="storeQty">Store quantity</label>
+    <input
+      type="number"
+      name="storeQty"
+      id="storeQty"
+      placeholder="Please enter store quantity here."
+      value="<%= storeQty %>"
+    />
+    <br />
+    <input type="submit" value="Submit" name="submit" />
+  </form>
+</div>
 <%- include('layouts/footer'); -%>

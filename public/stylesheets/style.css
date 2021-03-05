@@ -108,6 +108,77 @@ td {
   text-align: center;
 }
 
+#login{
+  width: 300px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
+#login label{
+  float: left;
+  width: 100px;
+}
+
+#login input{
+  width: 100px;
+}
+
+#editProduct {
+  width: 600px;
+  margin: 50px;
+  margin-left: 600px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
+#editProduct label{
+  float: left;
+  width: 200px;
+}
+
+#editProduct input{
+  width: 200px;
+}
+
+#success{
+  width: 200px;
+  margin: 50px;
+  margin-left: 300px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
+#createProduct {
+  width: 150px;
+  margin: 10px;
+  margin-bottom: 0;
+  margin-left: 100px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
+#productList{
+  margin-top: 40px;
+}
+
 /* footer */
 
 footer {
