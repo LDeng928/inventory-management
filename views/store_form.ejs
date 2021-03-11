@@ -1,0 +1,64 @@
+<%- include('layouts/head'); -%> <%- include('layouts/header'); %> <%-
+include('layouts/nav'); -%>
+
+<!-- MUST Add Form to collect new product date -->
+<div id="editProduct">
+  <form name="store_form" method="POST" enctype="multipart/form-data">
+    <label for="streetAddress">Street Address</label>
+    <input
+      type="text"
+      name="streetAddress"
+      id="streetAddress"
+      placeholder="Please enter street address."
+      value="<%= streetAddress %>"
+    />
+    <br />
+    <label for="city">City</label>
+    <input
+      type="text"
+      name="city"
+      id="city"
+      placeholder="Please enter the city."
+      value="<%= city %>"
+    />
+    <br />
+    <label for="phoneNumber">Phone Number</label>
+    <input
+      type="text"
+      name="phoneNumber"
+      id="phoneNumber"
+      placeholder="Please enter phone number."
+      value="<%= phoneNumber %>"
+    />
+    <br />
+    <label for="storeManager">Store Manager</label>
+    <input
+      type="text"
+      name="storeManager"
+      id="storeManager"
+      placeholder="Please enter the store manager."
+      value="<%= storeManager %>"
+    />
+    <br />
+    <label for="storeName">Store name</label>
+    <input
+      type="text"
+      name="storeName"
+      id="storeName"
+      placeholder="Please enter store name."
+      value="<%= storeName %>"
+    />
+    <br />
+    <label for="openingHours">Opening hours</label>
+    <input
+      type="text"
+      name="openingHours"
+      id="openingHours"
+      placeholder="Please enter store opening hours."
+      value="<%= openingHours %>"
+    />
+    <br />
+    <input type="submit" value="Submit" name="submit" />
+  </form>
+</div>
+<%- include('layouts/footer'); -%>

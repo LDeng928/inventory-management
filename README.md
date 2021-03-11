@@ -30,3 +30,5 @@
 
 1. Update product and store controllers and hide list behind log in
 2. Update user controller.
+3. Add store_form.ejs.
+4. Store controller create GET

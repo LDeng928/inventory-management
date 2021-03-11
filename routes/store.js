@@ -8,7 +8,7 @@ var store_controller = require('../controllers/storeController');
 router.get('/list', store_controller.store_list_get);
 
 //GET request for creating a new store. 
-// router.get('/create', store_controller.store_create_get);
+router.get('/create', store_controller.store_create_get);
 
 // //POST request for creasting a new store.
 // router.post('/create'. store_controller.store_create_post);

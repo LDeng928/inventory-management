@@ -22,3 +22,24 @@ exports.store_list_get = function(req, res) {
         res.redirect('/users');
     }
 }
+
+//Store create GET function
+exports.store_create_get = function(req, res) {
+    //Check if user is logged in
+    if(req.session.userLoggedIn){
+        var pageData = {
+            //Match the collection from MongoDB
+        streetAddress: "",
+        city: "",
+        phoneNumber: "",
+        storeManager: "",
+        storeName: "",
+        openingHours: ""
+        }
+        //Need to create a view called store_form
+        res.render("store_form", pageData);
+    }
+    else{
+        res.redirect('/users');
+    }
+}
