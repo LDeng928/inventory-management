@@ -3,21 +3,24 @@
 var Product = require('../models/product');
 const fs = require('fs');
 const path = require('path');
-const {readyState} = require('../models/db');
+const {readyState, user} = require('../models/db');
 const {json} = require('express');
 
 // Display all products as a list
 exports.product_list_get = function(req, res){
     //Check if the user is loggin in
-
-
-    Product.find({}).exec(function(err, products){
-        console.log(err);
-        //Renders the prduct_list view
-        //Gets the products data from MongoDB
-        res.render('product_list', {products: products, pageurl: 'product_list'});
-    });
-}
+    if(req.session.userLoggedIn){
+        Product.find({}).exec(function(err, products){
+            console.log(err);
+            //Renders the prduct_list view
+            //Gets the products data from MongoDB
+            res.render('product_list', {products: products, pageurl: 'product_list'});
+        });
+    }
+    else {
+        res.redirect('/users');
+    }
+    }
 
 //Get the details of one product 
 exports.product_detail = function(req, res){
@@ -36,22 +39,25 @@ exports.product_detail = function(req, res){
 //Display product create form on GET
 exports.product_create_get = function(req, res){
     //check if user is logged in
-    
+    if(req.session.userLoggedIn){
     //create a JS object to store data
-    var pageData = {
-        //Must match the collection from MongoDB, product_form ids and the Product model
-        productId: "",
-        productName: "",
-        productPrice: "",
-        productCost: "",
-        category: "",
-        storeName: "",
-        warehouseQty: "",
-        storeQty: ""
+        var pageData = {
+            //Must match the collection from MongoDB, product_form ids and the Product model
+            productId: "",
+            productName: "",
+            productPrice: "",
+            productCost: "",
+            category: "",
+            storeName: "",
+            warehouseQty: "",
+            storeQty: ""
+        }
+        //Render the product create form
+        res.render('product_form', pageData);
     }
-
-    //Render the product create form
-    res.render('product_form', pageData);
+    else {
+        res.redirect('/users');
+    }
 
     //Else redirect user back to log in page
     

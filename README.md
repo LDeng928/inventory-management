@@ -25,3 +25,8 @@
 
 1. Full CRUD function on product.
 2. Success page to inform user the functions have been completed.
+
+#### March 10 commit
+
+1. Update product and store controllers and hide list behind log in
+2. Update user controller.

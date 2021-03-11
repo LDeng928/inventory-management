@@ -16,7 +16,7 @@ exports.log_in_post = function(req, res){
         if(item){
             req.session.username = item.username;
             req.session.userLoggedIn = true;
-            res.redirect('/store/list');
+            res.render('success', {action: "You have logged in"});
         }
         else{
             res.render('log_in', {error: 'Please try again.'});
