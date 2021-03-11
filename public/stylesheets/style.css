@@ -88,15 +88,26 @@ img{
   margin-top: 5%;
 }
 
-table{
+#productTable{
+  width: 1500px;
+  height: 620px;
   background-color: white;
   border-radius: 50px;
-  margin-top: 100px;
-  margin-left: 150px;
+  overflow: scroll;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
-tbody{
-  overflow: scroll;
+#storeTable{
+  width: 1000px;
+  height: 400px;
+  background-color: white;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 th {

@@ -2,29 +2,31 @@
   <%- include('layouts/header'); -%> 
     <%- include('layouts/nav'); -%>
     <section>
-      <table>
-        <thead>
-          <tr>
-            <th>Store</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>Hours</th>
-            <th>Phone number</th>
-            <th>Store manager</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for(var store of stores) { %>
-          <tr>
-            <td><%= store.storeName %></td>
-            <td><%= store.streetAddress %></td>
-            <td><%= store.city %></td>
-            <td><%= store.openingHours %></td>
-            <td><%= store.phoneNumber %></td>
-            <td><%= store.storeManager %></td>
-          </tr>
-          <% } %>
-        </tbody>
-      </table>
+      <div id="storeTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Store</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Hours</th>
+              <th>Phone number</th>
+              <th>Store manager</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var store of stores) { %>
+            <tr>
+              <td><%= store.storeName %></td>
+              <td><%= store.streetAddress %></td>
+              <td><%= store.city %></td>
+              <td><%= store.openingHours %></td>
+              <td><%= store.phoneNumber %></td>
+              <td><%= store.storeManager %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
     </section>
   <%- include('layouts/footer'); -%>
