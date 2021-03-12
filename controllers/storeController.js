@@ -43,3 +43,40 @@ exports.store_create_get = function(req, res) {
         res.redirect('/users');
     }
 }
+
+//Create store POST
+exports.store_create_post = function(req, res){
+    var streetAddress = req.body.streetAddress;
+    var city = req.body.city;
+    var phoneNumber = req.body.phoneNumber;
+    var storeManager = req.body.storeManager;
+    var storeName = req.body.storeName;
+    var openingHours = req.body.openingHours;
+
+    var pageData = {
+        streetAddress: streetAddress,
+        city: city,
+        phoneNumber: phoneNumber,
+        storeManager: storeManager,
+        storeName: storeName,
+        openingHours: openingHours
+    }
+
+    var newStore = new Store(pageData);
+
+    newStore.save().then(() => console.log("New store created."));
+
+    res.render('success', {action: 'Created a new store '});
+}
+
+exports.store_delete_get = function(req, res){
+    res.render("waiting for a response");
+}
+
+exports.store_update_get = function(req, res){
+    res.render("waiting for a response");
+}
+
+exports.store_update_post = function(req, res){
+    res.render("waiting for a response");
+}
