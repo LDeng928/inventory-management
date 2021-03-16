@@ -12,6 +12,8 @@ include('layouts/nav'); -%>
           <th>Hours</th>
           <th>Phone number</th>
           <th>Store manager</th>
+          <th>Update</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -23,6 +25,20 @@ include('layouts/nav'); -%>
           <td><%= store.openingHours %></td>
           <td><%= store.phoneNumber %></td>
           <td><%= store.storeManager %></td>
+          <td>
+            <input
+              type="button"
+              value="Edit"
+              onclick="location.href='/store/<%= store.id %>/update'"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="Delete"
+              onclick="location.href='/store/<%= store.id %>/delete'"
+            />
+          </td>
         </tr>
         <% } %>
       </tbody>

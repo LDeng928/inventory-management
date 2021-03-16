@@ -70,13 +70,66 @@ exports.store_create_post = function(req, res){
 }
 
 exports.store_delete_get = function(req, res){
-    res.render("waiting for a response");
+    if(req.session.userLoggedIn) {
+        var id = req.params.id;
+
+        Store.findByIdAndDelete({_id: id}).exec(function(err, store){
+            if(store){
+                res.render('success', {action: "Store removed"});
+            } else{
+                res.render('error', {message: "Store not found. Please try again"});
+            }
+        });
+    } else {
+        res.redirect('/users');
+    }
 }
 
 exports.store_update_get = function(req, res){
-    res.render("waiting for a response");
+    var id = req.params.id;
+
+    if(req.session.userLoggedIn){
+        Store.findOne({_id: id}).exec(function(err, store){
+            if(err) console.log(err);
+
+            var pageData = {
+                streetAddress: store.streetAddress,
+                city: store.city,
+                phoneNumber: store.phoneNumber,
+                storeManager: store.storeManager,
+                storeName: store.storeName,
+                openingHours: store.storeName
+            }
+            res.render('store_form', pageData);
+        });
+    }
+    else {
+        res.redirect('/users');
+    }
 }
 
 exports.store_update_post = function(req, res){
-    res.render("waiting for a response");
+    var streetAddress = req.body.streetAddress;
+    var city = req.body.city;
+    var phoneNumber = req.body.phoneNumber;
+    var storeManager = req.body.storeManager;
+    var storeName = req.body.storeName;
+    var openingHours = req.body.openingHours;
+
+    var pageDate = {
+        streetAddress: streetAddress,
+        city: city,
+        phoneNumber: phoneNumber,
+        storeManager: storeManager,
+        storeName: storeName,
+        openingHours: openingHours
+    }
+
+    var query = {_id:req.params.id}
+
+    Store.updateOne(query, pageDate, (err, doc)=>{
+        if(err) console.log(err);
+
+        res.render('success', {action: "Updated store"});
+    })
 }
