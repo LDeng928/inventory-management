@@ -2,11 +2,23 @@
 include('layouts/nav'); -%>
 <section>
   <div id="login">
-    <form action="" name="logInForm" method="POST">
+    <form action="" name="registerForm" method="POST">
       <label for="username">User Name:</label>
-      <input type="text" name="username" id="username" /><br />
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Enter a new username"
+        style="width: 150px"
+      /><br />
       <label for="password">Password:</label>
-      <input type="password" name="password" id="password" /><br /><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter a new password"
+        style="width: 150px"
+      /><br /><br />
       <p id="errors">
         <% if(typeof error !== 'undefined'){ %> <%= error %> <% } %>
       </p>
