@@ -1,17 +1,120 @@
 <%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
 include('layouts/nav'); -%>
+<style>
+  .container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1.2rem 2.5rem;
+    width: 20rem;
+    border-radius: 5px;
+  }
+
+  .container h1 {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    color: #fff;
+  }
+
+  .container a {
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .btn:focus {
+    outline: 0;
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .text {
+    margin-top: 1.875rem;
+    color: #fff;
+  }
+
+  .form-control {
+    position: relative;
+    margin: 1.25rem 0 2.5rem;
+    width: 18.75rem;
+  }
+
+  .form-control input {
+    font-family: inherit;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .form-control input:focus,
+  .form-control input:valid {
+    outline: 0;
+    border-bottom-color: #fff;
+  }
+
+  .form-control label {
+    position: absolute;
+    /*top: 15px;*/
+    bottom: 40px;
+    left: 0;
+    pointer-events: none;
+    color: #fff;
+  }
+
+  .form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .form-control input:focus + label span,
+  .form-control input:valid + label span {
+    color: #fff;
+    transform: translateY(-30px);
+  }
+</style>
+
 <section>
-  <div id="login">
+  <div class="container">
+    <h1>Please log in</h1>
     <form action="" name="logInForm" method="POST">
-      <label for="username">User Name:</label>
-      <input type="text" name="username" id="username" /><br />
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" /><br /><br />
+      <div class="form-control">
+        <input type="text" name="username" id="username" required />
+        <label for="username">Username</label>
+      </div>
+
+      <div class="form-control">
+        <input type="password" name="password" id="password" required />
+        <label for="password">Password</label>
+      </div>
+
       <p id="errors">
         <% if(typeof error !== 'undefined'){ %> <%= error %> <% } %>
       </p>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Login" class="btn" />
+
+      <p class="text">
+        Don't have an account? <a href="/users/register">Register</a>
+      </p>
     </form>
   </div>
 </section>
+
 <%- include('layouts/footer'); -%>
+<!-- <script src="/public/javascripts/logInFormScript.js"></script> -->
