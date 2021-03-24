@@ -100,12 +100,12 @@ img{
 }
 
 #storeTable{
-  width: 1000px;
-  height: 400px;
+  width: 1250px;
+  height: 580px;
   background-color: white;
   border-radius: 50px;
-  overflow: hidden;
-  margin-top: 50px;
+  overflow: scroll;
+  margin-top: 20px;
   margin-left: 50px;
   margin-bottom: 20px;
 }
@@ -186,7 +186,24 @@ td {
   background-color: darkgray;
 }
 
+#createStore{
+  width: 150px;
+  margin: 10px;
+  margin-bottom: 0;
+  margin-left: 100px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
 #productList{
+  margin-top: 40px;
+}
+
+#storeList{
   margin-top: 40px;
 }
 
