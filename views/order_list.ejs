@@ -1,0 +1,35 @@
+<%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
+include('layouts/nav'); -%>
+<section>
+  <button id="createProduct">
+    <a href="#">Add a product</a>
+  </button>
+  <div id="productTable">
+    <table id="productList">
+      <thead>
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Order Quantity</th>
+          <th>Product Price</th>
+          <th>Order Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var order of orders) { %>
+        <tr>
+          <td><%= order.productId %></td>
+          <td><%= order.productName %></td>
+          <td><%= order.category %></td>
+          <td><%= order.orderQty %></td>
+          <td><%= order.productPrice %></td>
+          <td><%= order.orderTotal.toFixed(2) %></td>          
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>
+<%- include('layouts/footer'); -%>
