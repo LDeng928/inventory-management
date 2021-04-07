@@ -6,19 +6,19 @@ include('layouts/nav'); -%>
     <table id="productList">
       <thead>
         <tr>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Store Name</th>
-          <th>Warehouse Qty</th>
-          <th>Store Qty</th>
-          <th>Cost</th>
-          <th>Retail Price</th>
+          <th>Code <i class="arrow up" onclick="sortCodeAsc()"></i> <i class="arrow down" onclick="sortCodeDes()"></i></th>
+          <th>Name <i class="arrow up" onclick="sortNameAsc()"></i> <i class="arrow down" onclick="sortNameDes()"></i></th>
+          <th>Category <i class="arrow up" onclick="sortCategoryAsc()"></i> <i class="arrow down" onclick="sortCategoryDes()"></i></i></th>
+          <th>Store Name <i class="arrow up" onclick="sortStoreNameAsc()"></i> <i class="arrow down" onclick="sortStoreNameDes()"></i></th>
+          <th>Warehouse Qty <i class="arrow up" onclick="sortWarehouseQtyAsc()"></i> <i class="arrow down" onclick="sortWarehouseQtyDes()"></i></th>
+          <th>Store Qty <i class="arrow up" onclick="sortStoreQtyAsc()"></i> <i class="arrow down" onclick="sortStoreQtyDes()"></i></th>
+          <th>Cost ($) <i class="arrow up" onclick="sortCostAsc()"></i> <i class="arrow down" onclick="sortCostDes()"></i></th>
+          <th>Retail Price ($) <i class="arrow up" onclick="sortPriceAsc()"></i> <i class="arrow down" onclick="sortPriceDes()"></i></th>
           <th>Update</th>
           <th>Delete</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="lecturesTableData">
         <% for(var product of products) { %>
         <tr>
           <td><%= product.productId %></td>
@@ -27,8 +27,8 @@ include('layouts/nav'); -%>
           <td><%= product.storeName %></td>
           <td><%= product.warehouseQty %></td>
           <td><%= product.storeQty %></td>
-          <td>$<%= product.productCost.toFixed(2) %></td>
-          <td>$<%= product.productPrice.toFixed(2) %></td>
+          <td><%= product.productCost.toFixed(2) %></td>
+          <td><%= product.productPrice.toFixed(2) %></td>
           <td>
             <input
               type="button"
@@ -46,7 +46,65 @@ include('layouts/nav'); -%>
         </tr>
         <% } %>
       </tbody>
+      <script>
+        const tbody = document.getElementById("lecturesTableData");
+
+        function tableSort(colNum, cmp) {
+          let rows = [...tbody.rows];
+          rows.sort((a, b) => cmp(a.cells[colNum].textContent, b.cells[colNum].textContent))
+            .map(row => tbody.appendChild(row));
+        }
+        function sortCodeAsc() {
+          tableSort(0, (a, b) => a - b);
+        }
+        function sortCodeDes() {
+          tableSort(0, (a, b) => b - a);
+        }
+        function sortNameAsc() {
+          tableSort(1, (a, b) => a.localeCompare(b));
+        }
+        function sortNameDes() {
+          tableSort(1, (a, b) => b.localeCompare(a));
+        }
+        function sortCategoryAsc() {
+          tableSort(2, (a, b) => a.localeCompare(b));
+        }
+        function sortCategoryDes() {
+          tableSort(2, (a, b) => b.localeCompare(a));
+        }
+        function sortStoreNameAsc() {
+          tableSort(3, (a, b) => a.localeCompare(b));
+        }
+        function sortStoreNameDes() {
+          tableSort(3, (a, b) => b.localeCompare(a));
+        }
+        function sortWarehouseQtyAsc() {
+          tableSort(4, (a, b) => a - b);
+        }
+        function sortWarehouseQtyDes() {
+          tableSort(4, (a, b) => b - a);
+        }
+        function sortStoreQtyAsc() {
+          tableSort(5, (a, b) => a - b);
+        }
+        function sortStoreQtyDes() {
+          tableSort(5, (a, b) => b - a);
+        }
+        function sortCostAsc() {
+          tableSort(6, (a, b) => a - b);
+        }
+        function sortCostDes() {
+          tableSort(6, (a, b) => b - a);
+        }
+        function sortPriceAsc() {
+          tableSort(7, (a, b) => a - b);
+        }
+        function sortPriceDes() {
+          tableSort(7, (a, b) => b - a);
+        }
+      </script>
     </table>
   </div>
 </section>
 <%- include('layouts/footer'); -%>
+
