@@ -21,16 +21,28 @@
       <div style="text-align: center; padding-left: 50px">
         <h3>Order list report</h3>
         <table>
-          <% if(orders.length > 0){%> <% orders.forEach(order => {%>
-          <tr>
-            <td><%= order.productId %></td>
-            <td><%= order.productName %></td>
-            <td><%= order.category %></td>
-            <td><%= order.orderQty %></td>
-            <td><%= order.productPrice %></td>
-            <td><%= order.orderTotal %></td>
-          </tr>
-          <%}) %> <% } %>
+          <thead>
+            <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Order Quantity</th>
+              <th>Product Price</th>
+              <th>Order Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(orders.length > 0){%> <% orders.forEach(order => {%>
+            <tr>
+              <td><%= order.productId %></td>
+              <td><%= order.productName %></td>
+              <td><%= order.category %></td>
+              <td><%= order.orderQty %></td>
+              <td><%= order.productPrice %></td>
+              <td><%= order.orderTotal %></td>
+            </tr>
+            <%}) %> <% } %>
+          </tbody>
         </table>
       </div>
     </div>
