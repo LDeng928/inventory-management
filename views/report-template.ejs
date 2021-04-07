@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order list pdf</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 85%; margin: 0 7.5%">
+      <div style="text-align: center; padding-left: 50px">
+        <h3>Order list report</h3>
+        <table>
+          <% if(orders.length > 0){%> <% orders.forEach(order => {%>
+          <tr>
+            <td><%= order.productId %></td>
+            <td><%= order.productName %></td>
+            <td><%= order.category %></td>
+            <td><%= order.orderQty %></td>
+            <td><%= order.productPrice %></td>
+            <td><%= order.orderTotal %></td>
+          </tr>
+          <%}) %> <% } %>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
