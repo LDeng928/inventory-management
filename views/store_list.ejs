@@ -1,22 +1,23 @@
-<%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
-include('layouts/nav'); -%>
+<%- include('layouts/head'); -%> 
+<%- include('layouts/header'); -%> 
+<%- include('layouts/nav'); -%>
 <section>
   <button id="createStore"><a href="/store/create">Add a store</a></button>
   <div id="storeTable">
     <table id="storeList">
       <thead>
         <tr>
-          <th>Store</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>Hours</th>
-          <th>Phone number</th>
-          <th>Store manager</th>
+          <th>Store <i class="arrow up" onclick="sortStoreAsc()"></i> <i class="arrow down" onclick="sortStoreDes()"></i></th>
+          <th>Address <i class="arrow up" onclick="sortAddressAsc()"></i> <i class="arrow down" onclick="sortAddressDes()"></i></th>
+          <th>City <i class="arrow up" onclick="sortCityAsc()"></i> <i class="arrow down" onclick="sortCityDes()"></i></th>
+          <th>Hours <i class="arrow up" onclick="sortHoursAsc()"></i> <i class="arrow down" onclick="sortHoursDes()"></i></th>
+          <th>Phone number <i class="arrow up" onclick="sortPhoneAsc()"></i> <i class="arrow down" onclick="sortPhoneDes()"></i></th>
+          <th>Store manager <i class="arrow up" onclick="sortManagerAsc()"></i> <i class="arrow down" onclick="sortManagerDes()"></i></th>
           <th>Update</th>
           <th>Delete</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="lecturesTableData2">
         <% for(var store of stores) { %>
         <tr>
           <td><%= store.storeName %></td>
@@ -42,6 +43,51 @@ include('layouts/nav'); -%>
         </tr>
         <% } %>
       </tbody>
+      <script>
+        const tbody = document.getElementById("lecturesTableData2");
+  
+        function tableSort(colNum, cmp) {
+          let rows = [...tbody.rows];
+          rows.sort((a, b) => cmp(a.cells[colNum].textContent, b.cells[colNum].textContent))
+            .map(row => tbody.appendChild(row));
+        }
+        function sortStoreAsc() {
+          tableSort(0, (a, b) => a.localeCompare(b));
+        }
+        function sortStoreDes() {
+          tableSort(0, (a, b) => b.localeCompare(a));
+        }
+        function sortAddressAsc() {
+          tableSort(1, (a, b) => a.localeCompare(b));
+        }
+        function sortAddressDes() {
+          tableSort(1, (a, b) => b.localeCompare(a));
+        }
+        function sortCityAsc() {
+          tableSort(2, (a, b) => a.localeCompare(b));
+        }
+        function sortCityDes() {
+          tableSort(2, (a, b) => b.localeCompare(a));
+        }
+        function sortHoursAsc() {
+          tableSort(3, (a, b) => a.localeCompare(b));
+        }
+        function sortHoursDes() {
+          tableSort(3, (a, b) => b.localeCompare(a));
+        }
+        function sortPhoneAsc() {
+          tableSort(4, (a, b) => a.localeCompare(b));
+        }
+        function sortPhoneDes() {
+          tableSort(4, (a, b) => b.localeCompare(a));
+        }
+        function sortManagerAsc() {
+          tableSort(5, (a, b) => a.localeCompare(b));
+        }
+        function sortManagerDes() {
+          tableSort(5, (a, b) => b.localeCompare(a));
+        }
+      </script>
     </table>
   </div>
 </section>

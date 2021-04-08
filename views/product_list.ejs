@@ -1,5 +1,6 @@
-<%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
-include('layouts/nav'); -%>
+<%- include('layouts/head'); -%> 
+<%- include('layouts/header'); -%> 
+<%- include('layouts/nav'); -%>
 <section>
   <button id="createProduct"><a href="/product/create">Add a product</a></button>
   <div id="productTable">
@@ -18,7 +19,7 @@ include('layouts/nav'); -%>
           <th>Delete</th>
         </tr>
       </thead>
-      <tbody id="lecturesTableData">
+      <tbody id="lecturesTableData1">
         <% for(var product of products) { %>
         <tr>
           <td><%= product.productId %></td>
@@ -46,64 +47,64 @@ include('layouts/nav'); -%>
         </tr>
         <% } %>
       </tbody>
-      <script>
-        const tbody = document.getElementById("lecturesTableData");
-
-        function tableSort(colNum, cmp) {
-          let rows = [...tbody.rows];
-          rows.sort((a, b) => cmp(a.cells[colNum].textContent, b.cells[colNum].textContent))
-            .map(row => tbody.appendChild(row));
-        }
-        function sortCodeAsc() {
-          tableSort(0, (a, b) => a - b);
-        }
-        function sortCodeDes() {
-          tableSort(0, (a, b) => b - a);
-        }
-        function sortNameAsc() {
-          tableSort(1, (a, b) => a.localeCompare(b));
-        }
-        function sortNameDes() {
-          tableSort(1, (a, b) => b.localeCompare(a));
-        }
-        function sortCategoryAsc() {
-          tableSort(2, (a, b) => a.localeCompare(b));
-        }
-        function sortCategoryDes() {
-          tableSort(2, (a, b) => b.localeCompare(a));
-        }
-        function sortStoreNameAsc() {
-          tableSort(3, (a, b) => a.localeCompare(b));
-        }
-        function sortStoreNameDes() {
-          tableSort(3, (a, b) => b.localeCompare(a));
-        }
-        function sortWarehouseQtyAsc() {
-          tableSort(4, (a, b) => a - b);
-        }
-        function sortWarehouseQtyDes() {
-          tableSort(4, (a, b) => b - a);
-        }
-        function sortStoreQtyAsc() {
-          tableSort(5, (a, b) => a - b);
-        }
-        function sortStoreQtyDes() {
-          tableSort(5, (a, b) => b - a);
-        }
-        function sortCostAsc() {
-          tableSort(6, (a, b) => a - b);
-        }
-        function sortCostDes() {
-          tableSort(6, (a, b) => b - a);
-        }
-        function sortPriceAsc() {
-          tableSort(7, (a, b) => a - b);
-        }
-        function sortPriceDes() {
-          tableSort(7, (a, b) => b - a);
-        }
-      </script>
     </table>
+    <script>
+      const tbody = document.getElementById("lecturesTableData1");
+
+      function tableSort(colNum, cmp) {
+        let rows = [...tbody.rows];
+        rows.sort((a, b) => cmp(a.cells[colNum].textContent, b.cells[colNum].textContent))
+          .map(row => tbody.appendChild(row));
+      }
+      function sortCodeAsc() {
+        tableSort(0, (a, b) => a - b);
+      }
+      function sortCodeDes() {
+        tableSort(0, (a, b) => b - a);
+      }
+      function sortNameAsc() {
+        tableSort(1, (a, b) => a.localeCompare(b));
+      }
+      function sortNameDes() {
+        tableSort(1, (a, b) => b.localeCompare(a));
+      }
+      function sortCategoryAsc() {
+        tableSort(2, (a, b) => a.localeCompare(b));
+      }
+      function sortCategoryDes() {
+        tableSort(2, (a, b) => b.localeCompare(a));
+      }
+      function sortStoreNameAsc() {
+        tableSort(3, (a, b) => a.localeCompare(b));
+      }
+      function sortStoreNameDes() {
+        tableSort(3, (a, b) => b.localeCompare(a));
+      }
+      function sortWarehouseQtyAsc() {
+        tableSort(4, (a, b) => a - b);
+      }
+      function sortWarehouseQtyDes() {
+        tableSort(4, (a, b) => b - a);
+      }
+      function sortStoreQtyAsc() {
+        tableSort(5, (a, b) => a - b);
+      }
+      function sortStoreQtyDes() {
+        tableSort(5, (a, b) => b - a);
+      }
+      function sortCostAsc() {
+        tableSort(6, (a, b) => a - b);
+      }
+      function sortCostDes() {
+        tableSort(6, (a, b) => b - a);
+      }
+      function sortPriceAsc() {
+        tableSort(7, (a, b) => a - b);
+      }
+      function sortPriceDes() {
+        tableSort(7, (a, b) => b - a);
+      }
+    </script>
   </div>
 </section>
 <%- include('layouts/footer'); -%>
