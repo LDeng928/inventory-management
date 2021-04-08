@@ -6,6 +6,11 @@ var pdf_controller = require("../controllers/pdfController");
 
 router.get("/generateReport", pdf_controller.generate_report);
 
+router.get(
+  "/generateWaterlooInventoryReport",
+  pdf_controller.generate_waterloo_inventory_report
+);
+
 // router.post("/", (req, res) => {
 //   const doc = new PDFDocument();
 //   let filename = req.body.filename;

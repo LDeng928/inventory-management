@@ -12,6 +12,7 @@ var storeRouter = require("./routes/store");
 var productRouter = require("./routes/product");
 var orderRouter = require("./routes/order");
 var pdfRouter = require("./routes/pdf");
+var reportRouter = require("./routes/report");
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use("/store", storeRouter);
 app.use("/product", productRouter);
 app.use("/order", orderRouter);
 app.use("/pdf", pdfRouter);
+app.use("/report", reportRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
