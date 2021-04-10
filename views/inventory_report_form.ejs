@@ -1,0 +1,12 @@
+<%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
+include('layouts/nav'); -%>
+<label>Waterloo store inventory report</label>
+<form method="POST" name="inventory_report_form">
+  <select name="storeName" id="storeName">
+    <option value="Waterloo">Waterloo</option>
+    <option value="Cambridge">Cambridge</option>
+  </select>
+  <input type="submit" value="Submit" name="submit" />
+</form>
+
+<%- include('layouts/footer'); -%>
