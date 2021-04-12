@@ -79,7 +79,7 @@ header a{
 /* section */
 
 section{
-  margin-left: 300px;
+  margin-left: 250px;
   margin-top: 30px ;
 }
 
@@ -99,94 +99,90 @@ section{
 }
 
 #productTableBar{
-  width: 1400px;
-  height: 20px;
+  width: 1500px;
+  height: 50px;
   background-color: lightgrey;
   margin-top: 20px;
   margin-left: 50px;
-  padding: 20px 0;
-  border-bottom: black 1px solid;
+  padding: 0;
+  border: black 1px solid;
 }
 
 #productTableItem{
-  width: 1400px;
+  width: 1500px;
   height: 520px;
   background-color: lightgrey;
+  border-left: black solid 1px;
+  border-right: black solid 1px;
+  border-bottom: black solid 1px;
   overflow-y: scroll;
   margin-left: 50px;
   margin-bottom: 20px;
 }
 
 #orderTableBar{
-  width: 960px;
-  height: 20px;
+  width: 1000px;
+  height: 50px;
   background-color: lightgrey;
   margin-top: 20px;
   margin-left: 50px;
-  padding: 20px 0;
-  border-bottom: black 1px solid;
+  padding: 0;
+  border: black 1px solid;
 }
 
 #orderTableItem{
-  width: 960px;
+  width: 1000px;
   height: 520px;
   background-color: lightgrey;
   overflow-y: scroll;
   margin-left: 50px;
   margin-bottom: 20px;
+  border-left: black solid 1px;
+  border-right: black solid 1px;
+  border-bottom: black solid 1px;
 }
 
 #storeTableBar{
   width: 1200px;
-  height: 20px;
+  height: 50px;
   background-color: lightgrey;
   margin-top: 20px;
   margin-left: 50px;
-  padding: 20px 0;
-  border-bottom: black 1px solid;
+  padding: 0;
+  border: black 1px solid;
 }
 
 #storeTableItem{
   width: 1200px;
-  height: 400px;
+  height: 325px;
   background-color: lightgrey;
   margin-left: 50px;
   padding: 20px 0;
-  border-bottom: black 1px solid;
+  border-left: black solid 1px;
+  border-right: black solid 1px;
+  border-bottom: black solid 1px;
 }
 
-.product th {
-  width: 140px;
+.product th, .product td{
+  width: 145px;
+  min-width: 145px;
+  margin: 0;
+  padding: 15px 0;
   text-align: center;
-}
-.product td {
-  width: 140px;
-  padding: 20px 0;
-  padding-left: 5px;
-  text-align: center;
-}
-.product td input {
-  margin-left: 30px;
 }
 
-.store th {
+.store th, .store td {
   width: 150px;
+  min-width: 150px;
+  margin: 0;
+  padding: 15px 0;
   text-align: center;
 }
-.store td {
-  width: 150px;
-  padding: 20px 0;
-  padding-left: 5px;
-  text-align: center;
-}
-.order th {
-  width: 160px;
-  text-align: center;
-}
-.order td {
-  width: 160px;
-  padding: 20px 0;
-  padding-left: 5px;
+.order th, .order td {
+  width: 120px;
+  min-width: 120px;
+  margin: 0;
+  padding: 15px 0;
   text-align: center;
 }
 
