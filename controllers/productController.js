@@ -142,7 +142,7 @@ exports.product_update_get = function (req, res) {
   }
 };
 
-//Hanlde product update on POST
+//Handle product update on POST
 exports.product_update_post = function (req, res) {
   var productId = req.body.productId;
   var productName = req.body.productName;
