@@ -56,11 +56,11 @@ exports.product_create_get = function (req, res) {
     };
     //Render the product create form
     res.render("product_form", pageData);
-  } else {
+  }
+  //Else redirect user back to log in page
+  else {
     res.redirect("/users");
   }
-
-  //Else redirect user back to log in page
 };
 
 //Handle product create on POST
