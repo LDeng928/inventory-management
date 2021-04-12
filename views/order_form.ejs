@@ -1,0 +1,65 @@
+<%- include('layouts/head'); -%> <%- include('layouts/header'); %> <%-
+include('layouts/nav'); -%>
+
+<!-- MUST Add Form to collect new order date -->
+<div id="editProduct">
+  <form name="order_form" method="POST" enctype="multipart/form-data">
+    <label for="productId">Product Id</label>
+    <input
+      type="number"
+      name="productId"
+      id="productId"
+      placeholder="Please enter product id."
+      value="<%= productId %>"
+    />
+    <br />
+    <label for="productName">Product name</label>
+    <input
+      type="text"
+      name="productName"
+      id="productName"
+      placeholder="Please enter the name of the product."
+      value="<%= productName %>"
+    />
+    <br />
+    <label for="category">Category</label>
+    <input
+      type="text"
+      name="category"
+      id="category"
+      placeholder="Please enter category here."
+      value="<%= category %>"
+    />
+    <br />
+    <label for="">Order quantity</label>
+    <input
+      type="number"
+      name="orderQty"
+      id="orderQty"
+      placeholder="Please enter order quantity here."
+      value="<%= orderQty %>"
+    />
+    <br />
+    <label for="productPrice">Product price</label>
+    <input
+      type="number"
+      name="productPrice"
+      id="productPrice"
+      placeholder="Please enter price here."
+      value="<%= productPrice %>"
+    />
+    <br />
+
+    <label for="orderTotal">Order total</label>
+    <input
+      type="number"
+      name="orderTotal"
+      id="orderTotal"
+      placeholder="Please enter price here."
+      value="<%= orderTotal %>"
+    />
+    <br />
+    <input type="submit" value="Submit" name="submit" />
+  </form>
+</div>
+<%- include('layouts/footer'); -%>
