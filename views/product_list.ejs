@@ -3,10 +3,10 @@
 <%- include('layouts/nav'); -%>
 <section>
   <button id="createProduct"><a href="/product/create">Add a product</a></button>
-  <div id="productTable">
-    <table id="productList">
+  <div id="productTableBar">
+    <table>
       <thead>
-        <tr>
+        <tr class="product">
           <th>Code <i class="arrow up" onclick="sortCodeAsc()"></i> <i class="arrow down" onclick="sortCodeDes()"></i></th>
           <th>Name <i class="arrow up" onclick="sortNameAsc()"></i> <i class="arrow down" onclick="sortNameDes()"></i></th>
           <th>Category <i class="arrow up" onclick="sortCategoryAsc()"></i> <i class="arrow down" onclick="sortCategoryDes()"></i></i></th>
@@ -19,9 +19,14 @@
           <th>Delete</th>
         </tr>
       </thead>
+    </table>
+  </div>
+  <div id="productTableItem">
+    <table>
       <tbody id="lecturesTableData1">
+        <div id="scroll">
         <% for(var product of products) { %>
-        <tr>
+        <tr class="product">
           <td><%= product.productId %></td>
           <td><%= product.productName %></td>
           <td><%= product.category %></td>
@@ -46,6 +51,7 @@
           </td>
         </tr>
         <% } %>
+        </div>
       </tbody>
     </table>
     <script>

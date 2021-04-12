@@ -3,10 +3,10 @@
 <%- include('layouts/nav'); -%>
 <section>
   <button id="createStore"><a href="/store/create">Add a store</a></button>
-  <div id="storeTable">
-    <table id="storeList">
+  <div id="storeTableBar">
+    <table>
       <thead>
-        <tr>
+        <tr class="store">
           <th>Store <i class="arrow up" onclick="sortStoreAsc()"></i> <i class="arrow down" onclick="sortStoreDes()"></i></th>
           <th>Address <i class="arrow up" onclick="sortAddressAsc()"></i> <i class="arrow down" onclick="sortAddressDes()"></i></th>
           <th>City <i class="arrow up" onclick="sortCityAsc()"></i> <i class="arrow down" onclick="sortCityDes()"></i></th>
@@ -17,9 +17,13 @@
           <th>Delete</th>
         </tr>
       </thead>
+    </table>
+  </div>
+  <div id="storeTableItem">
+    <table>
       <tbody id="lecturesTableData2">
         <% for(var store of stores) { %>
-        <tr>
+        <tr class="store">
           <td><%= store.storeName %></td>
           <td><%= store.streetAddress %></td>
           <td><%= store.city %></td>
