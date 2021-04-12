@@ -14,10 +14,10 @@ router.post("/create", order_controller.order_create_post);
 router.get("/:id/delete", order_controller.order_delete_get);
 
 // order update get
-router.get(":id/update", order_controller.order_update_get);
+router.get("/:id/update", order_controller.order_update_get);
 
 // order update post
-router.post(":id/update", order_controller.order_update_post);
+router.post("/:id/update", order_controller.order_update_post);
 
 // order details get
 router.get(":id/detail", order_controller.order_detail);

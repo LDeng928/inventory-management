@@ -6,6 +6,24 @@ const { readyState } = require("../models/db");
 const { json } = require("express");
 const { DateTime } = require("mssql");
 
+// display current orders
+exports.order_list_get = function (req, res) {
+  //res.send("Not implemented: order list");
+  if (req.session.userLoggedIn) {
+    Order.find({}).exec(function (err, orders) {
+      console.log(err);
+      res.render("order_list", { orders: orders });
+    });
+  } else {
+    res.redirect("/users");
+  }
+};
+
+// order detail
+exports.order_detail = function (req, res) {
+  res.send("Not implemented");
+};
+
 //order create get
 exports.order_create_get = function (req, res) {
   //res.send("Not implemented.");
@@ -130,22 +148,4 @@ exports.order_update_post = function (req, res) {
     if (err) console.log(err);
     res.render("success", { action: "Updated order" });
   });
-};
-
-// order detail
-exports.order_detail = function (req, res) {
-  res.send("Not implemented");
-};
-
-// display current orders
-exports.order_list_get = function (req, res) {
-  //res.send("Not implemented: order list");
-  if (req.session.userLoggedIn) {
-    Order.find({}).exec(function (err, orders) {
-      console.log(err);
-      res.render("order_list", { orders: orders });
-    });
-  } else {
-    res.redirect("/users");
-  }
 };
