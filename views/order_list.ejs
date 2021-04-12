@@ -2,10 +2,10 @@
 include('layouts/nav'); -%>
 <section>
   <button id="createProduct">
-    <a href="/order/create">Add a new order</a>   
+    <a href="/order/create">Add a new order</a>
   </button>
   <button>
-     <a href="/pdf/generateReport">Generate a PDF</a>
+    <a href="/pdf/generateReport">Generate a PDF</a>
   </button>
   <div id="productTable">
     <table id="productList">
@@ -17,6 +17,8 @@ include('layouts/nav'); -%>
           <th>Order Quantity</th>
           <th>Product Price</th>
           <th>Order Total</th>
+          <th>Update</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -27,7 +29,20 @@ include('layouts/nav'); -%>
           <td><%= order.category %></td>
           <td><%= order.orderQty %></td>
           <td><%= order.productPrice %></td>
-          <td><%= order.orderTotal.toFixed(2) %></td>          
+          <td><%= order.orderTotal.toFixed(2) %></td>
+          <td>
+            <input
+              type="button"
+              value="Edit"
+              onclick="location.href='/product/<%= product.id %>/update'"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="Delete"
+              onclick="location.href='/product/<%= product.id %>/delete'"
+            />
           </td>
         </tr>
         <% } %>
