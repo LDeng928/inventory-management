@@ -28,15 +28,17 @@ exports.generate_report = function (req, res) {
               height: "20mm",
             },
           };
-          pdf.create(data, options).toFile("report.pdf", function (err, data) {
-            if (err) {
-              res.send(err);
-            } else {
-              res.render("success", {
-                action: "An order list report was created ",
-              });
-            }
-          });
+          pdf
+            .create(data, options)
+            .toFile("Order-list.pdf", function (err, data) {
+              if (err) {
+                res.send(err);
+              } else {
+                res.render("success", {
+                  action: "An order list report was created ",
+                });
+              }
+            });
         }
       }
     );
