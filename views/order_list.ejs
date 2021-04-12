@@ -4,13 +4,13 @@ include('layouts/nav'); -%>
   <button id="createProduct">
     <a href="/order/create">Add a new order</a>
   </button>
-  <button>
+  <button id="createOrder">
     <a href="/pdf/generateReport">Generate a PDF</a>
   </button>
-  <div id="productTable">
-    <table id="productList">
+  <div id="orderTableBar">
+    <table>
       <thead>
-        <tr>
+        <tr class="order">
           <th>Product Id</th>
           <th>Product Name</th>
           <th>Category</th>
@@ -21,9 +21,13 @@ include('layouts/nav'); -%>
           <th>Delete</th>
         </tr>
       </thead>
+    </table>
+  </div>
+  <div id="orderTableItem">
+    <table>
       <tbody>
         <% for(var order of orders) { %>
-        <tr>
+        <tr class="order">
           <td><%= order.productId %></td>
           <td><%= order.productName %></td>
           <td><%= order.category %></td>
