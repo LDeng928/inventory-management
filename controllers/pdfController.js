@@ -7,6 +7,8 @@ let path = require("path");
 let bodyParser = require("body-parser");
 let Order = require("../models/order");
 let Product = require("../models/product");
+let Store = require("../models/store");
+const { page } = require("pdfkit");
 
 // Store order for more inventory Order List report
 exports.generate_report = function (req, res) {
@@ -49,11 +51,18 @@ exports.generate_report = function (req, res) {
 exports.inventory_report_get = function (req, res) {
   //res.render("inventory_report_form");
   //res.send("Hello");
-  var pageData = {
-    storeName: "",
-  };
+  // var pageData = {
+  //   storeName: "",
+  // };
+  // res.render("inventory_report_form", pageData);
 
-  res.render("inventory_report_form", pageData);
+  Store.find({}).exec(function (err, stores) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("inventory_report_form", { stores: stores });
+    }
+  });
 };
 
 //inventory report post
