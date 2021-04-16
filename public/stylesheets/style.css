@@ -279,6 +279,19 @@ section{
   background-color: darkgray;
 }
 
+#createReport {
+  width: 150px;
+  margin: 10px;
+  margin-bottom: 0;
+  margin-left: 50px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
 .arrow{
   border: solid black;
   border-width: 0 3px 3px 0;
