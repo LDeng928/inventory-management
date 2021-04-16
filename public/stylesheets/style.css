@@ -50,18 +50,6 @@ header h3 {
   margin-top: 0;
 }
 
-header a{
-  float: right;
-  margin-top: 20px;
-  margin-right: 20px;
-  border: black 2px solid;
-  border-radius: 10px;
-  box-shadow: grey -1px 2px 2px 1px;
-  padding: 10px;
-  text-align: center;
-  background-color: darkgray;
-}
-
 /* sidebar */
 
 #nav {
@@ -365,6 +353,16 @@ section{
   border: solid black 1px;
   border-radius: 20px;
   box-shadow: black 0 0 3px 3px;
+}
+
+#logout{
+  margin-left: 160px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
 }
 
 /* footer */
