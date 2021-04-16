@@ -1,0 +1,21 @@
+<%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
+include('layouts/nav'); -%>
+<h3>Please select a store to generate a store level inventory report</h3>
+<form method="POST" name="category_report_form">
+  <select name="storeName" id="storeName">
+    <% for (var i = 0; i < products.length; i++) { %>
+    <option value="<%= products[i].category %>">
+      <%= products[i].category %>
+    </option>
+    <% } %>
+
+    <!-- <option value="Waterloo">Waterloo</option>
+    <option value="Cambridge">Cambridge</option>
+    <option value="Kingston">Kingston</option>
+    <option value="Kitchener">Kitchener</option>
+    <option value="London">London</option> -->
+  </select>
+  <input type="submit" value="Submit" name="submit" />
+</form>
+
+<%- include('layouts/footer'); -%>

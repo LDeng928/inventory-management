@@ -171,6 +171,59 @@ exports.product_inventory_post = function (req, res) {
   });
 };
 
+// Product category controller. Import data from MongoDB and allow ejs to loop through it.
+exports.product_category_get = function (req, res) {
+  Product.find({}).exec(function (err, products) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("product_category_form", { products: products });
+    }
+  });
+};
+
+exports.product_category_post = function (req, res) {
+  var category = req.body.category;
+  var pageData = {
+    category: category,
+  };
+  console.log(pageData);
+
+  Product.find({ category: category }).exec(function (err, products) {
+    ejs.renderFile(
+      path.join(__dirname, "../views/", "product_category_template.ejs"),
+      { products: products },
+      (err, data) => {
+        if (err) {
+          res.send(err);
+        } else {
+          let options = {
+            height: "11.25in",
+            width: "8.5in",
+            header: {
+              height: "20mm",
+            },
+            footer: {
+              height: "20mm",
+            },
+          };
+          pdf
+            .create(data, options)
+            .toFile(`${category}-inventory-report.pdf`, function (err, data) {
+              if (err) {
+                res.send(err);
+              } else {
+                res.render("success", {
+                  action: `${category} inventory report was created`,
+                });
+              }
+            });
+        }
+      }
+    );
+  });
+};
+
 // Waterloo store inventory report controller
 // exports.generate_waterloo_inventory_report = function (req, res) {
 //   var storeName = req.body.storeName;
