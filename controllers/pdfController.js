@@ -57,6 +57,7 @@ exports.inventory_report_get = function (req, res) {
   // res.render("inventory_report_form", pageData);
 
   // Import data from MongoDB and allow ejs to loop through the storeName.
+
   Store.find({}).exec(function (err, stores) {
     if (err) {
       console.log(err);
