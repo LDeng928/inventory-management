@@ -2,10 +2,21 @@
 include('layouts/nav'); -%>
 <h3>Please select a product to generate a product inventory report</h3>
 <form method="POST" name="product_inventory_form">
+  <% 
+    function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+    }
+    var uniqueProductName = [];
+    var productNameArray = [];
+    for (var j = 0; j < products.length; j++) {
+      productNameArray[j] = products[j].productName;
+    }
+    uniqueProductName = productNameArray.filter(onlyUnique);
+  %>
   <select name="productName" id="productName">
-    <% for (var i = 0; i < products.length; i++) { %>
-    <option value="<%= products[i].productName %>">
-      <%= products[i].productName %>
+    <% for (var i = 0; i < uniqueProductName.length; i++) { %>
+    <option value="<%= uniqueProductName[i] %>">
+      <%= uniqueProductName[i] %>
     </option>
     <% } %>
   </select>

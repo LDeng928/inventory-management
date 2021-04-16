@@ -279,6 +279,32 @@ section{
   background-color: darkgray;
 }
 
+#createStoreReport {
+  width: 150px;
+  margin: 10px;
+  margin-bottom: 0;
+  margin-left: 50px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
+#createProductReport {
+  width: 150px;
+  margin: 10px;
+  margin-bottom: 0;
+  margin-left: 50px;
+  border: black 2px solid;
+  border-radius: 10px;
+  box-shadow: grey -1px 2px 2px 1px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkgray;
+}
+
 .arrow{
   border: solid black;
   border-width: 0 3px 3px 0;
@@ -296,6 +322,27 @@ section{
   -webkit-transform: rotate(45deg);
 }
 
+#storeReport{
+  background-color: darkgrey;
+  width: 700px;
+  margin-left: 30px;
+  margin-top: 50px;
+  padding: 10px;
+  border: solid black 1px;
+  border-radius: 20px;
+  box-shadow: black 0 0 3px 3px;
+}
+
+#productReport{
+  background-color: darkgrey;
+  width: 700px;
+  margin-left: 30px;
+  margin-top: 50px;
+  padding: 10px;
+  border: solid black 1px;
+  border-radius: 20px;
+  box-shadow: black 0 0 3px 3px;
+}
 /* footer */
 
 footer {
