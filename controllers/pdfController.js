@@ -56,6 +56,7 @@ exports.inventory_report_get = function (req, res) {
   // };
   // res.render("inventory_report_form", pageData);
 
+  // Import data from MongoDB and allow ejs to loop through the storeName.
   Store.find({}).exec(function (err, stores) {
     if (err) {
       console.log(err);
@@ -104,6 +105,66 @@ exports.inventory_report_post = function (req, res) {
                 });
               }
             });
+        }
+      }
+    );
+  });
+};
+
+//Import data from MongoDB and allow ejs to loop through it
+exports.product_inventory_get = function (req, res) {
+  Product.find({}).exec(function (err, products) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("product_inventory_form", { products: products });
+    }
+  });
+};
+
+exports.product_inventory_post = function (req, res) {
+  var productName = req.body.productName;
+  var pageData = {
+    productName: productName,
+  };
+  console.log(pageData);
+
+  Product.find({ productName: productName }).exec(function (err, products) {
+    ejs.renderFile(
+      path.join(
+        __dirname,
+        "../views/",
+        "product_inventory_report_template.ejs"
+      ),
+      { products: products },
+      (err, data) => {
+        if (err) {
+          res.send(err);
+        } else {
+          let options = {
+            height: "11.25in",
+            width: "8.5in",
+            header: {
+              height: "20mm",
+            },
+            footer: {
+              height: "20mm",
+            },
+          };
+          pdf
+            .create(data, options)
+            .toFile(
+              `${productName}-inventory-report.pdf`,
+              function (err, data) {
+                if (err) {
+                  res.send(err);
+                } else {
+                  res.render("success", {
+                    action: `${productName} inventory report was created`,
+                  });
+                }
+              }
+            );
         }
       }
     );

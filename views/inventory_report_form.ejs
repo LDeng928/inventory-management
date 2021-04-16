@@ -1,6 +1,6 @@
 <%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
 include('layouts/nav'); -%>
-<label>Waterloo store inventory report</label>
+<h3>Please select a store to generate a store level inventory report</h3>
 <form method="POST" name="inventory_report_form">
   <select name="storeName" id="storeName">
     <% for (var i = 0; i < stores.length; i++) { %>

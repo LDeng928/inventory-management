@@ -10,6 +10,10 @@ router.get("/generateInventoryReport", pdf_controller.inventory_report_get);
 
 router.post("/generateInventoryReport", pdf_controller.inventory_report_post);
 
+router.get("/generateProductInventory", pdf_controller.product_inventory_get);
+
+router.post("/generateProductInventory", pdf_controller.product_inventory_post);
+
 // router.get(
 //   "/generateWaterlooInventoryReport",
 //   pdf_controller.generate_waterloo_inventory_report
