@@ -1,13 +1,19 @@
 <%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
 include('layouts/nav'); -%>
-<label>Waterloo store inventory report</label>
+<h3>Please select a store to generate a store level inventory report</h3>
 <form method="POST" name="inventory_report_form">
   <select name="storeName" id="storeName">
-    <option value="Waterloo">Waterloo</option>
+    <% for (var i = 0; i < stores.length; i++) { %>
+    <option value="<%= stores[i].storeName %>">
+      <%= stores[i].storeName %>
+    </option>
+    <% } %>
+
+    <!-- <option value="Waterloo">Waterloo</option>
     <option value="Cambridge">Cambridge</option>
     <option value="Kingston">Kingston</option>
     <option value="Kitchener">Kitchener</option>
-    <option value="London">London</option>
+    <option value="London">London</option> -->
   </select>
   <input type="submit" value="Submit" name="submit" />
 </form>

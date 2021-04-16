@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product inventory report</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 85%; margin: 0 7.5%">
+      <div style="text-align: center; padding-left: 50px">
+        <h3>Product Inventory Report</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Product Id</th>
+              <th>Product Price</th>
+              <th>Product Cost</th>
+              <th>Category</th>
+              <th>Product store qty</th>
+              <th>Store name</th>
+              <th>Warehouse qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(products.length > 0){%> <% products.forEach(product => {%>
+            <tr>
+              <td><%= product.productName %></td>
+              <td><%= product.productId %></td>
+              <td><%= product.productPrice %></td>
+              <td><%= product.productCost %></td>
+              <td><%= product.category %></td>
+              <td><%= product.storeQty %></td>
+              <td><%= product.storeName %></td>
+              <td><%= product.warehouseQty %></td>
+            </tr>
+            <%}) %> <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
