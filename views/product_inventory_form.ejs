@@ -1,15 +1,19 @@
-<%- include('layouts/head'); -%> <%- include('layouts/header'); -%> <%-
-include('layouts/nav'); -%>
-<h3>Please select a product to generate a product inventory report</h3>
-<form method="POST" name="product_inventory_form">
-  <select name="productName" id="productName">
-    <% for (var i = 0; i < products.length; i++) { %>
-    <option value="<%= products[i].productName %>">
-      <%= products[i].productName %>
-    </option>
-    <% } %>
-  </select>
-  <input type="submit" value="Submit" name="submit" />
-</form>
-
+<%- include('layouts/head'); -%> 
+<%- include('layouts/header'); -%> 
+<%- include('layouts/nav'); -%>
+<section>
+  <div id="productReport">
+    <h3>Please select a product to generate a product inventory report</h3>
+    <form method="POST" name="product_inventory_form">
+      <select name="productName" id="productName">
+        <% for (var i = 0; i < products.length; i++) { %>
+        <option value="<%= products[i].productName %>">
+          <%= products[i].productName %>
+        </option>
+        <% } %>
+      </select>
+      <input type="submit" value="Submit" name="submit" />
+    </form>
+  </div>
+</section>
 <%- include('layouts/footer'); -%>
