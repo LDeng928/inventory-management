@@ -131,7 +131,7 @@ section{
 }
 
 #storeTableBar{
-  width: 1200px;
+  width: 1250px;
   height: 50px;
   background-color: lightgrey;
   margin-top: 20px;
@@ -141,9 +141,10 @@ section{
 }
 
 #storeTableItem{
-  width: 1200px;
+  width: 1250px;
   height: 325px;
   background-color: lightgrey;
+  overflow-y: scroll;
   margin-left: 50px;
   padding: 20px 0;
   border-left: black solid 1px;
